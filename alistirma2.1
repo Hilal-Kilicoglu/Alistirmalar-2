@@ -1,0 +1,17 @@
+#"mastermind" adlı oyun kodu
+import random
+
+sayı=str(random.randint(10,98))
+while sayı[0]==sayı[1]:
+    sayı=random.randint(10,98)
+
+while True:
+    tahmin=input("Tahminini gir. Girdiğin sayı 10 ile 98 arasında olmalı ve farklı rakamlardan oluşmalı: ")
+    if len(tahmin)!=2 or tahmin[0]==tahmin[1] or tahmin.isdigit()!=1:
+        print("Hatalı giriş. Lütfen tekrar dene.")
+    elif tahmin[0]!=sayı[0] and tahmin[1]!=sayı[1]:
+        print("doğruyer:0, yanlışyer:-2")
+    elif (tahmin[0]==sayı[0] and tahmin[1]!=sayı[1]) or (tahmin[0]!=sayı[0] and tahmin[1]==sayı[1]):
+        print("doğruyer:1, yanlışyer:-1")
+    elif tahmin[0]==sayı[0] or tahmin[1]==sayı[1]:
+        print("Tebrikler, doğru tahmin!")
