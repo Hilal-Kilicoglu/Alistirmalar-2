@@ -1,0 +1,12 @@
+#Bu kodda ilk olarak Fibonacci dizisinin n. terimini bulmaya yarayan rekürsif fonksiyon yer alır.
+def fibonacci(n):
+    if n<=2:
+        return 1
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+#İkinci kısımda, ilk 30 Fibonacci sayısı aralarında bir boşluk bırakılarak ekrana yazdırılır.
+#n sayısı, terim sayısını ifade eder. 
+n=1 
+while n<=30:
+    print(fibonacci(n), end=" ")
+    n+=1
