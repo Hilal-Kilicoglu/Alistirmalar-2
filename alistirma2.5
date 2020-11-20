@@ -1,0 +1,17 @@
+def asalmi(n):
+    if n<2:
+        return False
+    for i in range(2,n,1):
+        if n%i==0:
+            return False
+        return True
+
+def superAsalmi(n):
+    if n<=0:
+        return True
+    if asalmi(n):
+        return superAsalmi(int(n/10))
+
+for i in range(10000,100000,1):
+    if superAsalmi(i):
+        print(i)
